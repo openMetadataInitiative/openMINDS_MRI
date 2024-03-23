@@ -1,0 +1,60 @@
+{
+    "_type": "https://openminds.ebrains.eu/MRI/image",
+    "required": [
+        "dataLocation"
+    ],
+    "properties": {
+        "additionalRemarks": {
+            "_instruction": "Enter any additional remarks concerning this image.",
+            "type": "string"
+        },
+        "coordinateSpace": {
+            "_instruction": "Add the coordinate space in which this image exists.",
+            "_linkedTypes": [
+                "https://openminds.ebrains.eu/sands/CommonCoordinateSpaceVersion",
+                "https://openminds.ebrains.eu/sands/CustomCoordinateSpace"
+            ]
+        },
+        "dataLocation": {
+            "_instruction": "Add the location of the file or file bundle in which the image is stored.",
+            "_linkedTypes": [
+                "https://openminds.ebrains.eu/core/File",
+                "https://openminds.ebrains.eu/core/FileBundle"
+            ]
+        },
+        "dimention": {
+            "_instruction": "Enter the dimentions of this image.",
+            "_embeddedTypes": [
+                "https://openminds.ebrains.eu/core/QuantitativeValue"
+            ],
+            "minItems": 2,
+            "type": "array"
+        },
+        "internalIdentifier": {
+            "_instruction": "Enter the identifier (or label) of this image that is used within the corresponding data files to identify this image.",
+            "type": "string"
+        },
+        "name": {
+            "_instruction": "Enter a descriptive name for this image.",
+            "type": "string"
+        },
+        "numberOfDimentin": {
+            "_instruction": "Enter the number of dimensions in this image. (e.g. for 2D images, enter 2; for 3D images, enter 3; for 4D images (3D volumes in time), enter 4).",
+            "type": "integer"
+        },
+        "recordedWith": {
+            "_instruction": "Add the device used to generate this image.",
+            "_linkedCategories": [
+                "deviceUsage"
+            ]
+        },
+        "resolution": {
+            "_instruction": "Enter the resultion of this image, in this order (x,y,z,t).",
+            "items": {
+                "type": "number"
+            },
+            "minItems": 2,
+            "type": "array"
+        }
+    }
+}

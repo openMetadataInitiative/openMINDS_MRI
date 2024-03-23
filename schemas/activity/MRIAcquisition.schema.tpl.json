@@ -1,0 +1,82 @@
+{
+  "_extends": "/core/schemas/research/ExperimentalActivity.schema.tpl.json",
+  "required": [
+    "device"
+  ],
+  "properties": {
+    "additionalRemarks": {
+      "_instruction": "Enter any additional remarks concerning this MR scan.",
+      "type": "string"
+    },
+    "contrastAgent": {
+      "_instruction": "Add the contrast agent used for this scan.",
+      "_linkedTypes": [
+        "https://openminds.ebrains.eu/chemicals/AmountOfChemical"
+      ]
+    },
+    "device": {
+      "_instruction": "Add the MRI machine setting used for this scan.",
+      "_linkedTypes": [
+        "https://openminds.ebrains.eu/MRI/MRIScannerUsage"
+      ]
+    },
+    "input": {
+      "_instruction": "Add the state of the subject or tissue sample before this session.",
+      "_linkedTypes": [
+        "https://openminds.ebrains.eu/core/SubjectState",
+        "https://openminds.ebrains.eu/core/TissueSampleState"
+      ]
+    },
+    "interSliceGap": {
+      "_embeddedTypes": [
+        "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "https://openminds.ebrains.eu/core/QuantitativeValueRange"
+      ],
+      "_instruction": "Enter the inter slice distance of this scan."
+    },
+    "numberOfSlices": {
+      "_instruction": "Enter number of slices in this MR image.",
+      "type": "number"
+    },
+    "output": {
+      "_instruction": "Add the location of the file or file bundle in which the scan is stored.",
+      "_linkedTypes": [
+        "https://openminds.ebrains.eu/core/File",
+        "https://openminds.ebrains.eu/core/FileBundle"
+      ]
+    },
+    "pulseSequenceType": {
+      "_instruction": "Add the type pulse sequence used for this scan.",
+      "_linkedCategories": [
+        "MRIPulseSequenceType"
+      ]
+    },
+    "sliceThickness": {
+      "_embeddedTypes": [
+        "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "https://openminds.ebrains.eu/core/QuantitativeValueRange"
+      ],
+      "_instruction": "Enter the slice thickness of this MR image."
+    },
+    "sliceTiming": {
+      "_instruction": "Enter the time in which each slice have been aquired within each volume.",
+      "_linkedTypes": [
+        "https://openminds.ebrains.eu/core/QuantitativeValueArray"
+      ]
+    },
+    "voxelSize": {
+      "_embeddedTypes": [
+        "https://openminds.ebrains.eu/core/QuantitativeValueArray"
+      ],
+      "_instruction": "Enter voxel size this image: in this order x,y,z."
+    },
+    "targetAnatomicalLocation": {
+      "_instruction": "Add the all the target anatomical location in this scan",
+      "_linkedTypes": [
+        "https://openminds.ebrains.eu/sands/AnatomicalTargetPosition"
+      ],
+      "minItems": 1,
+      "type": "array"
+    }
+  }
+}
